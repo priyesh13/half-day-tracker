@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('halfDayTrackerApp')
-  .directive('teamMember', function () {
+  .directive('person', function () {
     return {
-      templateUrl: 'app/teamMember/teamMember.html',
-      restrict: 'EA',
+      templateUrl: 'app/person/person.html',
+      restrict: 'E',
       link: function (scope, element, attrs) {
       }
     };

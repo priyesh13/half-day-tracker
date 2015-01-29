@@ -1,10 +1,10 @@
 'use strict';
 
-describe('Directive: teamMember', function () {
+describe('Directive: person', function () {
 
   // load the directive's module and view
   beforeEach(module('halfDayTrackerApp'));
-  beforeEach(module('app/teamMember/teamMember.html'));
+  beforeEach(module('app/person/person.html'));
 
   var element, scope;
 
@@ -13,9 +13,9 @@ describe('Directive: teamMember', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<team-member></team-member>');
+    element = angular.element('<person></person>');
     element = $compile(element)(scope);
     scope.$apply();
-    expect(element.text()).toBe('this is the teamMember directive');
+    expect(element.text()).toBe('this is the person directive');
   }));
 });

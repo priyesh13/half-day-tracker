@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('halfDayTrackerApp')
-  .controller('TeamMemberCtrl', function ($scope) {
+  .controller('PersonCtrl', function ($scope) {
     $scope.message = 'Hello';
   });

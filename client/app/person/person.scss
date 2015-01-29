@@ -1,0 +1,14 @@
+.person {
+	margin: 10px;
+	max-width: 200px;
+	border: 1px solid blue;
+	padding: 5px;
+
+
+	.avatar {
+		display: block;
+		min-height: 225px;
+		min-width: 65px;
+		border: 1px solid red;
+	}
+}
