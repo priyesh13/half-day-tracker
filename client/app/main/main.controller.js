@@ -2,26 +2,29 @@
 
 angular.module('halfDayTrackerApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
-    $scope.awesomeThings = [];
+      $scope.people = [];
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-      socket.syncUpdates('thing', $scope.awesomeThings);
-    });
-
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
-
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
-
-    $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('thing');
-    });
+      $http.get('/api/people').success(function(people) {
+        $scope.people = people;
+        socket.syncUpdates('person', $scope.people);
+      });
   });
+
+
+
+
+    // $scope.addThing = function() {
+    //   if($scope.newThing === '') {
+    //     return;
+    //   }
+    //   $http.post('/api/things', { name: $scope.newThing });
+    //   $scope.newThing = '';
+    // };
+
+    // $scope.deleteThing = function(thing) {
+    //   $http.delete('/api/things/' + thing._id);
+    // };
+
+    // $scope.$on('$destroy', function () {
+    //   socket.unsyncUpdates('thing');
+    // });

@@ -7,6 +7,31 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+var Person = require('../api/person/person.model');
+
+Person.find({}).remove(function() {
+  Person.create({
+    name : 'Ben',
+    initials: 'BM',
+    supportHalfDays: 10,
+    bonusHalfDays: 0
+  },{
+    name : 'Pri',
+    initials: 'PM',
+    supportHalfDays: 5,
+    bonusHalfDays: 2
+  },{
+    name : 'Deniz',
+    initials: 'DK',
+    supportHalfDays: 0,
+    bonusHalfDays: 0
+  },{
+    name : 'Dave',
+    initials: 'DN',
+    supportHalfDays: 2,
+    bonusHalfDays: 1
+  })
+});
 
 Thing.find({}).remove(function() {
   Thing.create({
