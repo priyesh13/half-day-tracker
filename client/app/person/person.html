@@ -6,6 +6,6 @@
 	<span class="support-half-days">Support Half Days: {{person.supportHalfDays}}</span>
 	<span class="bonus-half-days">Bonus Half Days: {{person.bonusHalfDays}}</span>
 	<span class="total-half-days">Total Half Days: {{person.supportHalfDays + person.bonusHalfDays}}</span>
-	<button data-ng-click="useHalfDay()" data-ng-disabled="$noHalfDays">Use Half Day</button>
+	<button data-ng-click="useHalfDay()" data-ng-disabled="(person.supportHalfDays  + person.bonusHalfDays) === 0">Use Half Day</button>
 	<button data-ng-click="addHalfDay()">Add Half Day</button>
 </div>
