@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('halfDayTrackerApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', function ($scope, $http, $modal, socket) {
       $scope.people = [];
 
       $http.get('/api/people').success(function(people) {

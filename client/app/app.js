@@ -10,6 +10,7 @@ angular.module('halfDayTrackerApp', [
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
+      .when('/add', '/add')
       .otherwise('/');
 
     $locationProvider.html5Mode(true);
