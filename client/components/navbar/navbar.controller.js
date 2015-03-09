@@ -5,6 +5,12 @@ angular.module('halfDayTrackerApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
+    },{
+      'title': 'Holiday',
+      'link': '/holiday'
+    },{
+      'title': 'Support',
+      'link': '/support'
     }];
 
     $scope.isCollapsed = true;

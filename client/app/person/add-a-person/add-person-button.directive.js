@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('halfDayTrackerApp')
-  .directive('addAPersonButton', function () {
+  .directive('addPersonButton', function () {
     return {
-      controller: 'AddAPersonCtrl',
+      controller: 'AddPersonCtrl',
       templateUrl: 'app/person/add-a-person/add-person-button.html',
       restrict: 'E',
       link: function (scope, element, attrs) {
