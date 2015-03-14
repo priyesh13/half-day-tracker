@@ -9,4 +9,12 @@ angular.module('halfDayTrackerApp')
   			controller: 'AddPersonCtrl'
   		});
   	}
+
+  	$scope.addPerson = function () {
+  		console.log('submit form')
+  	}
+
+  	$scope.cancelForm = function () {
+  		console.log('cancel form')
+  	}
 });

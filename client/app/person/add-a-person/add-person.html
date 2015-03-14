@@ -1,3 +1,7 @@
 <div class="modal-body">
-	<h1>Yippee...</h1>
+	<form novalidate name="add-person-form" class="add-person-form">
+	<input type="text" data-ng-model="person.name" placeholder="Name"><br/>
+	<input type="text" data-ng-model="person.initials" placeholder="Initials"><br/>
+	<button type="button" class="btn btn-default" data-ng-click="addPerson()">Submit</button>
+	<button type="button" class="btn" data-ng-click="cancelForm()">Cancel</button>
 </div>

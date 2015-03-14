@@ -12,5 +12,14 @@ angular.module('halfDayTrackerApp')
       $scope.person.bonusHalfDays += 1;
       $http.put('/api/people/'+ $scope.person._id, $scope.person);
     };
+
+    $scope.getAvatar = function(initials) {
+    	
+
+    	console.log("http://avatar.faw.bskyb.com/display/"+initials);
+    	// var avatar = $http.get('avatar.faw.bskyb.com/display/' +initials);
+
+    	return "https://placekitten.com/g/188/227";
+    }
     
 });
