@@ -5,16 +5,9 @@ angular.module('halfDayTrackerApp')
 
   	$scope.openForm = function () {
   		$scope.modal = $modal.open({
-  			templateUrl: 'app/person/add-a-person/add-person.html', 
-  			controller: 'AddPersonCtrl'
+  			templateUrl: 'app/person/add-a-person/templates/add-person.html', 
+  			controller: 'AddPersonModalCtrl'
   		});
   	}
 
-  	$scope.addPerson = function () {
-  		console.log('submit form')
-  	}
-
-  	$scope.cancelForm = function () {
-  		console.log('cancel form')
-  	}
 });

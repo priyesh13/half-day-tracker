@@ -3,7 +3,7 @@
 angular.module('halfDayTrackerApp')
   .directive('person', function () {
     return {
-    	controller: 'PersonCtrl',
+      controller: 'PersonCtrl',
       templateUrl: 'app/person/person.html',
       restrict: 'E',
       link: function (scope, element, attrs) {
