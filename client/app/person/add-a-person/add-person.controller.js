@@ -18,7 +18,9 @@ angular.module('halfDayTrackerApp')
     $scope.addPerson = function () {
 		var newPerson = {
 			name: $scope.person.name,
-			initials: $scope.person.initials
+			initials: $scope.person.initials,
+			supportHalfDays: 0,
+    		bonusHalfDays: 0
 		}
 
 		$http.post('/api/people', newPerson);
