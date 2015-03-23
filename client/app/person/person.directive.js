@@ -6,6 +6,7 @@ angular.module('halfDayTrackerApp')
       controller: 'PersonCtrl',
       templateUrl: 'app/person/person.html',
       restrict: 'E',
+      replace: true,
       link: function (scope, element, attrs) {
       }
     };

@@ -4,10 +4,14 @@ angular.module('halfDayTrackerApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
       $scope.people = [];
 
-      $http.get('/api/people').success(function(people) {
-        $scope.people = people;
-        socket.syncUpdates('person', $scope.people);
-      });
+      function updateView() {
+        $http.get('/api/people').success(function(people) {
+          $scope.people = people;
+          socket.syncUpdates('person', $scope.people);
+        });
+      }
+
+      updateView();
   });
 
 
