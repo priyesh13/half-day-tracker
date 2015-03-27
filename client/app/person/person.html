@@ -1,11 +1,26 @@
 <div class="person">
 	<div class="avatar">
-		<img data-ng-src="http://avatar.faw.bskyb.com/display/{{person.initials}}" data-person-error-src="https://placekitten.com/g/188/227" alt="{{person.name}}'s Avatar" />
+		<img data-ng-src="http://avatar.faw.bskyb.com/display/{{person.initials}}" 
+		     data-person-error-src="https://placekitten.com/g/128/128" alt="{{person.name}}'s Avatar" />
 	</div>
-	<span class="name">Name: {{person.name}}</span>
-	<span class="support-half-days">Support Half Days: {{person.supportHalfDays}}</span>
-	<span class="bonus-half-days">Bonus Half Days: {{person.bonusHalfDays}}</span>
-	<span class="total-half-days">Total Half Days: {{person.supportHalfDays + person.bonusHalfDays}}</span>
-	<button data-ng-click="useHalfDay()" data-ng-disabled="(person.supportHalfDays  + person.bonusHalfDays) === 0">Use Half Day</button>
-	<button data-ng-click="addHalfDay()">Add Half Day</button>
+	<h3 class="person-detail name">{{person.name}}</h3>
+	<table>
+		<tbody>
+			<tr>
+				<td>Support Half Days:</td>
+				<td class="half-days">{{person.supportHalfDays}}</td>
+			</tr>
+			<tr>
+				<td>Bonus Half Days:</td>
+				<td class="half-days">{{person.bonusHalfDays}}</td>
+			</tr>
+			<tr>
+				<td>Total Half Days:</td>
+				<td class="half-days">{{person.supportHalfDays + person.bonusHalfDays}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<button ng-show="isAdmin()" data-ng-click="useHalfDay()" data-ng-disabled="(person.supportHalfDays  + person.bonusHalfDays) === 0">Use Half Day</button>
+	<button ng-show="isAdmin()" data-ng-click="addHalfDay()">Add Half Day</button>
 </div>

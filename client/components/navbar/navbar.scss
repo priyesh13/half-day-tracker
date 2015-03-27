@@ -1,0 +1,11 @@
+div {
+	&.navbar-default {
+		background-color: #fff;
+		display: block;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 999;
+		border: #b0b0b0; 
+	}
+}

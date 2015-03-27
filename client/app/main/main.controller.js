@@ -1,17 +1,15 @@
 'use strict';
 
 angular.module('halfDayTrackerApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', function ($scope, $http, socket, Auth, $rootScope) {
       $scope.people = [];
 
-      function updateView() {
-        $http.get('/api/people').success(function(people) {
-          $scope.people = people;
-          socket.syncUpdates('person', $scope.people);
-        });
-      }
+      $http.get('/api/people').success(function(people) {
+        $scope.people = people;
+        socket.syncUpdates('person', $scope.people);
+      });
 
-      updateView();
+      $rootScope.isAdmin = Auth.isAdmin;
   });
 
 
