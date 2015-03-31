@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-md-12">
       <person ng-repeat="person in people"></person>
-      <div class="person" id="space-for-new-person">
+      <div data-ng-show="isAdmin()" class="person" id="space-for-new-person">
       	<add-person-button></add-person-button>
       </div>
     </div>

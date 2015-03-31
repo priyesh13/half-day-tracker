@@ -1,18 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+
 .person {
 	background-color: #f5f5f5;
 	margin: 10px;
 	width: 360px;
 	border: 1px solid #b0b0b0;
 	border-radius: 5px;
-	padding: 10px;
+	padding-top: 10px;
     float: left;
 
+    h3 {
+    	font-family: 'PT Sans', sans-serif;
+    	margin-top: 7px;
+    }
+
     table {
-    	td {
-    		&.half-days {
-    			padding-left: 10px;
+    	margin-bottom: 10px;
+    	tr {
+    		&:last-child {
+    			font-weight: bold;
     		}
+	    	td {
+	    		&.half-days {
+	    			padding-left: 40px;
+	    		}
+	    	}
     	}
+    }
+
+    &#space-for-new-person {
+    	padding: 10px;
     }
 
 	.avatar {
