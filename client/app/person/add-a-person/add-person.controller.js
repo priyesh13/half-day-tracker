@@ -3,9 +3,15 @@
 angular.module('halfDayTrackerApp')
   .controller('AddPersonCtrl', function ($scope, $http, socket) {
 
+    $scope.isFormOpen = false;
+
   	$scope.resetPerson = function() {
-  		$scope.person.name = '';
-  		$scope.person.initials = '';
+      $scope.isFormOpen = false;
+
+      if($scope.person) {
+    		$scope.person.name = '';
+    		$scope.person.initials = '';
+      }
   	}
 
     $scope.cancelForm = function () {
@@ -16,16 +22,16 @@ angular.module('halfDayTrackerApp')
     }
 
     $scope.addPerson = function () {
-		var newPerson = {
-			name: $scope.person.name,
-			initials: $scope.person.initials,
-			supportHalfDays: 0,
-    		bonusHalfDays: 0
-		}
+  		var newPerson = {
+  			name: $scope.person.name,
+  			initials: $scope.person.initials,
+  			supportHalfDays: 0,
+      		bonusHalfDays: 0
+  		}
 
-		$http.post('/api/people', newPerson);
-		$scope.updateView();
-		$scope.cancelForm();
+  		$http.post('/api/people', newPerson);
+  		$scope.updateView();
+  		$scope.cancelForm();
     }
 
     $scope.updateView = function() {
