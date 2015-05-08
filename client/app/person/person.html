@@ -21,8 +21,6 @@
     </tbody>
   </table>
 
-  <span datepicker-popup="{{format}}" ng-model="dt" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close">
-		<button data-ng-show="isAdmin()" data-ng-click="useHalfDay($event)" data-ng-disabled="(person.supportHalfDays  + person.bonusHalfDays) === 0" class="btn btn-xs btn-primary">Use Half Day</button>
-	</span>
+	<button data-ng-show="isAdmin()" data-ng-click="useHalfDay(person)" data-ng-disabled="(person.supportHalfDays  + person.bonusHalfDays) === 0" class="btn btn-xs btn-primary">Use Half Day</button>
   <button data-ng-show="isAdmin()" data-ng-click="addHalfDay()" class="btn btn-xs btn-success">Add Half Day</button>
 </div>

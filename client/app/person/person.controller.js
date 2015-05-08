@@ -1,12 +1,22 @@
 'use strict';
 
 angular.module('halfDayTrackerApp')
-  .controller('PersonCtrl', function ($scope, $http) {
+  .controller('PersonCtrl', function ($scope, $http, $modal) {
 
-    $scope.useHalfDay = function($event) {
-      $scope.open($event)
+    $scope.useHalfDay = function(something) {
+      //$scope.open($event)
       //$scope.person.supportHalfDays > 0 ? $scope.person.supportHalfDays -= 1 : $scope.person.bonusHalfDays -= 1;
       //$http.put('/api/people/'+ $scope.person._id, $scope.person);
+      var modalInstance = $modal.open({
+        templateUrl: 'app/person/halfDayPicker.html',
+        controller: 'HalfDayPickerCtrl',
+        resolve: {
+          person: function() {
+            console.log(something)
+            return something
+          }
+        }
+      })
     };
 
     $scope.addHalfDay = function() {
@@ -49,3 +59,16 @@ angular.module('halfDayTrackerApp')
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
     $scope.format = $scope.formats[0];
   });
+
+angular.module('halfDayTrackerApp')
+  .controller('HalfDayPickerCtrl', function ($scope, $modalInstance, person) {
+    $scope.person = person
+
+    $scope.ok = function () {
+      $modalInstance.close();
+    };
+
+    $scope.cancel = function () {
+      $modalInstance.dismiss('cancel');
+    };
+});
