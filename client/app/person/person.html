@@ -1,26 +1,28 @@
 <div class="person">
-	<div class="avatar">
-		<img data-ng-src="http://avatar.faw.bskyb.com/display/{{person.initials}}" 
-		     data-person-error-src="https://placekitten.com/g/128/128" alt="{{person.name}}'s Avatar" />
-	</div>
-	<h3 class="person-detail name">{{person.name}}</h3>
-	<table>
-		<tbody>
-			<tr>
-				<td>Support Half Days:</td>
-				<td class="half-days">{{person.supportHalfDays}}</td>
-			</tr>
-			<tr>
-				<td>Bonus Half Days:</td>
-				<td class="half-days">{{person.bonusHalfDays}}</td>
-			</tr>
-			<tr>
-				<td>Total Half Days:</td>
-				<td class="half-days">{{person.supportHalfDays + person.bonusHalfDays}}</td>
-			</tr>
-		</tbody>
-	</table>
+  <div class="avatar">
+    <img data-ng-src="http://avatar.faw.bskyb.com/display/{{person.initials}}"
+         data-person-error-src="https://placekitten.com/g/128/128" alt="{{person.name}}'s Avatar" />
+  </div>
+  <h3 class="person-detail name">{{person.name}}</h3>
+  <table>
+    <tbody>
+    <tr>
+      <td>Support Half Days:</td>
+      <td class="half-days">{{person.supportHalfDays}}</td>
+    </tr>
+    <tr>
+      <td>Bonus Half Days:</td>
+      <td class="half-days">{{person.bonusHalfDays}}</td>
+    </tr>
+    <tr>
+      <td>Total Half Days:</td>
+      <td class="half-days">{{person.supportHalfDays + person.bonusHalfDays}}</td>
+    </tr>
+    </tbody>
+  </table>
 
-	<button data-ng-show="isAdmin()" data-ng-click="useHalfDay()" data-ng-disabled="(person.supportHalfDays  + person.bonusHalfDays) === 0" class="btn btn-xs btn-primary">Use Half Day</button>
-	<button data-ng-show="isAdmin()" data-ng-click="addHalfDay()" class="btn btn-xs btn-success">Add Half Day</button>
+  <span datepicker-popup="{{format}}" ng-model="dt" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close">
+		<button data-ng-show="isAdmin()" data-ng-click="useHalfDay($event)" data-ng-disabled="(person.supportHalfDays  + person.bonusHalfDays) === 0" class="btn btn-xs btn-primary">Use Half Day</button>
+	</span>
+  <button data-ng-show="isAdmin()" data-ng-click="addHalfDay()" class="btn btn-xs btn-success">Add Half Day</button>
 </div>
